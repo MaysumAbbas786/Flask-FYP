@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!--<h2>Profile Page</h2>-->
+<div class="container-fluid">
+
+    <h1 class="mt-4">Edit Profile</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/index">Dashboard</a></li>
+        <li class="breadcrumb-item active">Edit Profile</li>
+    </ol>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="mt-1">Account Details:</h5>
+                <form class="form" method="post" action="{{ url_for('editprofile') }}" autocomplete="off">
+                    <label><b>Name</b></label><br>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name"><br>
+                    <div class="msg">{{ namemsg }}</div>
+                    <input type="submit" class="btn btn-primary" value="Save Changes">
+                </form>
+                <form class="form" method="post" action="{{ url_for('editprofile') }}" autocomplete="off">
+                    <label><b>Password</b></label><br>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password"><br>
+<!--                    <div class="msg">{{ msg }}</div>-->
+                    <div>{{ passwordmsg }}</div>
+                    <input type="submit" class="btn btn-primary" value="Save Changes">
+                </form>
+        </div>
+    </div>
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="mt-1">Health Details:</h5>
+                <form class="form" method="post" autocomplete="off">
+                    <label><b>Age in years</b></label><br>
+                    <input name="age" class="form-control" type="number" name="age" id="age" maxlength="3" placeholder="Enter Age"><br>
+                    <div class="msg">{{ agemsg }}</div>
+                    <input type="submit" class="btn btn-primary" value="Save Changes">
+                </form>
+                <form class="form" method="post" autocomplete="off">
+                    <label><b>Height in meters</b></label><br>
+                    <input type="number" class="form-control" step="0.001" name="heightt" id="heightt" maxlength="4" placeholder="Enter Heightt"><br>
+                    <div class="msg">{{ heighttmsg }}</div>
+                    <input type="submit" class="btn btn-primary" value="Save Changes">
+                </form>
+                <form class="form" method="post" autocomplete="off">
+                    <label><b>Weight in kilograms</b></label><br>
+                    <input type="number" class="form-control" step="0.001" name="weight" id="weight" maxlength="4" placeholder="Enter Weight"><br>
+                    <div class="msg">{{ weightmsg }}</div>
+                    <input type="submit" class="btn btn-primary" value="Save Changes">
+                </form>
+                <form class="form" method="post" autocomplete="off">
+                    <label><b>Number of Pregnancies</b></label><br>
+                    <input type="number" class="form-control" name="preg" id="preg" placeholder="For Female Only"><br>
+                    <div class="msg">{{ pregmsg }}</div>
+                    <input type="submit" class="btn btn-primary" value="Save Changes">
+                </form>
+        </div>
+    </div>
+{% endblock %}
+

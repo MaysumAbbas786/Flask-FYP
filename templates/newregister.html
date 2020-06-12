@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='css/loginstyle.css') }}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Sign Up</title>
+  </head>
+  <body class="bg-nav">
+  <div id="layoutAuthentication">
+      <nav class="navbar">
+        <a href= "" class="navbar-brand text-light">prickfreeDiabetes</a>
+      </nav>
+      <div id="layoutAuthentication_content" class="container">
+        <div class ="row">
+          <div class="col-md-8">
+            <h1 class="text-light display-4 mt-100" style="font-size:80px">Needlefree Diabetes Management platform developed by HU Students</h1>
+          </div>
+          <div class="col-md-4" style="margin-bottom: 3rem;">
+            <div class="card mt-100">
+              <div class="card-body">
+                <form class="form" action="{{ url_for('newregister') }}" method="post" autocomplete="off">
+                  <label><b>Name</b></label><br>
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name"><br>
+                  <label><b>Gender</b></label>
+                  <input type="radio" id="male" name="gender" value="Male">
+                  <label for="male">Male</label>
+                  <input type="radio" id="female" name="gender" value="Female">
+                  <label for="female">Female</label><br>
+                  <label><b>Number of Pregnancies</b></label>
+                  <input type="number" class="form-control" name="preg" id="preg" placeholder="For Female Only"><br>
+                  <label><b>Weight in kilograms</b></label><br>
+                  <input type="number" class="form-control" step="0.001" name="weight" id="weight" maxlength="4" placeholder="Enter Weight"><br>
+                  <label><b>Height in meters</b></label><br>
+                  <input type="number" class="form-control" step="0.001" name="heightt" id="heightt" maxlength="4" placeholder="Enter Heightt"><br>
+                  <label><b>Age in years</b></label><br>
+                  <input name="age" class="form-control" type="number" id="age" maxlength="3" placeholder="Enter Age"><br>
+                  <label><b>Email</b></label><br>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email"><br>
+                  <label><b>Password</b></label><br>
+                  <input type="password" class="form-control" name="password" placeholder="Enter Password"><br>
+                  <label><b>Device ID</b></label><br>
+                  <input type="text" class="form-control" name="dev_id" id="dev_id" placeholder="Mentioned on device pack"><br><br>
+                  <div class="msg">{{ msg }}</div>
+                  <input type="submit" class="btn btn-primary btn-block btn-lg" value="Signup">
+                </form>
+                <p class="mt-2">Already a member? <a href="/">Login Here</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<div id="layoutAuthentication_footer">
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; needlefreeDiabetes 2020</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

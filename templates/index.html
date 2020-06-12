@@ -1,0 +1,48 @@
+<!-- IT WILL USE layout.html as a Base Template -->
+{% extends "layout.html" %}
+{% block body %}
+                <main>
+                    <div class="container-fluid">
+                        <h1 class="mt-4">Welcome, {{ account['name'] }} to the Dashboard!</h1>
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <b>Last Glucose Value:</b> {{ glcodata['glucose'] }} mg/dL <br>
+                                        <b>Last Updated:</b> {{ glcodata['timestamp'].strftime("%b %d, %Y - %H:%M:%S") }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                                <div class="card mb-4">
+                                    <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Real-Time Glucose Graph</div>
+
+<!--                                    <div class="card-body">-->
+                                        <div class="chart" id="scattergraph">
+                                            <script>
+                                                var graphs = {{plot | safe}}
+                                                Plotly.plot('scattergraph', graphs,{})
+                                            </script>
+                                        </div>
+<!--                                    </div>-->
+
+                        </div>
+
+
+                        <div class="card mb-4">
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>Glucose Reading in Tabular Form</div>
+<!--                            <div class="card-body">-->
+                                <div class="chart" id="tablegraph">
+                                    <script>
+                                        var graphs = {{plot1 | safe}}
+                                        Plotly.plot('tablegraph', graphs,{})
+                                    </script>
+                                </div>
+<!--                            </div>-->
+                        </div>
+
+
+                    </div>
+                </main>
+{% endblock %}

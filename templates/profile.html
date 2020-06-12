@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!--<h2>Profile Page</h2>-->
+<div class="container-fluid">
+
+    <h1 class="mt-4">Profile</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/index">Dashboard</a></li>
+        <li class="breadcrumb-item active">Profile</li>
+    </ol>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="mt-1">Your account details are below:</h5>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td>{{ account['name'] }}</td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td>{{ account['password'] }}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>{{ account['email'] }}</td>
+                </tr>
+                <tr>
+                    <td>Device ID:</td>
+                    <td>{{ account['dev_id'] }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="mt-1">Your health details are below:</h5>
+            <table>
+                <tr>
+                    <td>Gender:</td>
+                    <td>{{ account['gender'] }}</td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td>{{ account['age'] }}</td>
+                </tr>
+                <tr>
+                    <td>Height:</td>
+                    <td>{{ account['heightt'] }}</td>
+                </tr>
+                <tr>
+                    <td>Weight:</td>
+                    <td>{{ account['weight'] }}</td>
+                </tr>
+                <tr>
+                    <td>BMI:</td>
+                    <td>{{ account['bmi'] }}</td>
+                </tr>
+                <tr>
+                    <td>Pregnancies:</td>
+                    <td>{{ account['preg'] }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,51 @@
+<!-- IT WILL USE layout.html as a Base Template -->
+{% extends "layout.html" %}
+{% block body %}
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Predictions using ML</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="/index">Dashboard</a></li>
+            <li class="breadcrumb-item active">Predictions</li>
+        </ol>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h1>Using averaged blood Glucose values</h1>
+                <p>Note : On the last day of a month, Prediction will be displayed below.</p>
+                <hr>
+                <p>{{ mon_year_text }}</p>
+                <p>{{ gluco_text }}</p>
+<!--                <p>For  {{ current_mon }} {{ current_year }} :</p>-->
+<!--                <p>Average Glucose Value = {{ avg_glu_value }} mg/dL</p>-->
+                <p>{{ prediction_text_2 }}</p>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h1>Using OGTT Glucose values</h1>
+<!--                <p>Note : At the moment I have deployed Simple Ml based Diabetes Expert System. However Till 23rd April 6:10pm, I am only able to insert data into Database. Later I have to retrive back the data from database and then use it to show probability of diabetes by copying some code from deployment folder</p>-->
+<!--                <p>Participants had a blood sample taken from their finger after an overnight fast and then drank a mixture containing 75 g glucose. Another blood sample was then taken 2 hours later.</p>-->
+                <p>OGTT : After an 8-Hour fast, drink a mixture containing 75 g glucose and then note the glucose value after 2 hours.</p>
+                <p>Note : Please enter OGTT glucose value in this form to diagnose diabetes.</p>
+                <hr>
+                <form action="/predict" method="post">
+                    <table>
+                        <tr>
+                            <td><b>Glucose Level</b></td>
+                            <td><input type="number" step="0.01" name="fasting_glucose" id="fasting_glucose" placeholder="Look from Table"></td>
+                        </tr>
+                    </table>
+                    <button type="submit" class="btn btn-primary">Predict</button>
+                </form>
+                {{ prediction_text_1 }}
+            </div>
+        </div>
+        <div style="height: 100vh;"></div>
+        <!-- <div class="card mb-4">
+                            <div class="card-body">When scrolling, the navigation stays at the top of the page. This is the end of the static navigation demo.</div></div> -->
+    </div>
+
+</main>
+{% endblock %}
